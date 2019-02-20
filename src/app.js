@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     el: "#app",
     data: {
       rates: {},
-      conversionAmount: null,
-      selectedCurrency: "",
-      convertedValue: null
+      fromSelectedCurrency: "",
+      euroConversionValue: null,
+      toSelectedCurrency: "",
+      selectedCurrencyValue: null
     },
     mounted(){
       this.getCurrencies();
@@ -19,11 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
           .then(currencies => this.rates = currencies.rates);
       },
       calculateConversion: function(){
-        if(this.conversionAmount > 0){
-          const result = this.conversionAmount * this.rates[this.selectedCurrency];
-          this.convertedValue = result.toFixed(2);
+        if(this.euroConversionValue > 0){
+          const rate = this.rates[this.toSelectedCurrency] / this.rates[this.fromSelectedCurrency];
+          const result = rate * this.euroConversionValue;
+          this.selectedCurrencyValue = result.toFixed(2);
         };
+      },
+      convertToBaseValue: function(){
+        const euroRate = 1 / this.rates[this.toSelectedCurrency];
+        const result = this.selectedCurrencyValue * euroRate;
+        this.euroConversionValue = result.toFixed(2);
+      },
+      convertToNewCurrencyValue: function(){
+        const rate = this.rates[this.fromSelectedCurrency] / this.rates[this.toSelectedCurrency];
+        const result = rate * this.selectedCurrencyValue;
+        this.euroConversionValue = result.toFixed(2);
       }
     }
   })
-})
+});
