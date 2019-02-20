@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Currency Converter</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Convergence|Roboto" rel="stylesheet">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
@@ -12,7 +14,8 @@
 
   <div id="app">
 
-    <label for="select_from_currency">From Currency:</label>
+    <div id="currency">
+    <label for="select_from_currency">From:</label>
     <select
       v-on:change="calculateConversion"
       id="select_from_currency"
@@ -23,15 +26,17 @@
     </select>
 
     <input v-on:input="calculateConversion" v-model="euroConversionValue" placeholder="Amount" value="euroConversionValue" type="text"/>
+    </div>
 
-    <label for="select_to_currency">To Currency:</label>
+    <div id="currency">
+    <label for="select_to_currency">To:</label>
     <select v-on:change="calculateConversion" id="select_to_currency" v-model="toSelectedCurrency">
       <option disabled value="">Select a currency</option>
       <option v-for="(value, key) of rates" :value="key">{{ key }}</option>
     </select>
 
     <input v-on:input="convertToNewCurrencyValue" v-model="selectedCurrencyValue" placeholder="Amount" v-show="toSelectedCurrency" value="selectedCurrencyValue" type="text"/>
-
+    </div>
   </div>
 
 </body>

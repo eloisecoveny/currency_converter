@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
           this.selectedCurrencyValue = result.toFixed(2);
         };
       },
-      convertToBaseValue: function(){
-        const euroRate = 1 / this.rates[this.toSelectedCurrency];
-        const result = this.selectedCurrencyValue * euroRate;
-        this.euroConversionValue = result.toFixed(2);
-      },
+      // convertToBaseValue: function(){
+      //   const euroRate = 1 / this.rates[this.toSelectedCurrency];
+      //   const result = this.selectedCurrencyValue * euroRate;
+      //   this.euroConversionValue = result.toFixed(2);
+      // },
       convertToNewCurrencyValue: function(){
         const rate = this.rates[this.fromSelectedCurrency] / this.rates[this.toSelectedCurrency];
         const result = rate * this.selectedCurrencyValue;

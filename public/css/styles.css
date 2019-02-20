@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(227, 231, 237);
+}
+
+h1 {
+  font-family: 'Convergence', sans-serif;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  font-size: 40px;
+}
+
+#app {
+  font-family: 'Roboto', sans-serif;
+  border: dotted 1px;
+  border-radius: 5px;
+  padding: 50px 70px;
+  background: rgb(249, 249, 249);
+}
+
+#currency {
+  padding: 10px;
+}
+
+label {
+  padding: 13px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  background: rgb(249, 249, 249);
+}
+
+input {
+  padding: 5px;
+  margin-left: 10px;
+  border: solid 1px rgb(166, 166, 166);
+  border-radius: 5px;
+  background: rgb(249, 249, 249);
+}
