@@ -7,11 +7,12 @@ body {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  background: rgb(227, 231, 237);
+  background-image: url("http://bgfons.com/uploads/paper/paper_texture278.jpg");
+  background-size: cover;
 }
 
 h1 {
-  font-family: 'Convergence', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
   padding-top: 90px;
   padding-bottom: 40px;
   font-size: 40px;
@@ -19,25 +20,44 @@ h1 {
 
 #app {
   font-family: 'Roboto', sans-serif;
-  border: dotted 1px;
+  border: dotted 3px;
   border-radius: 5px;
-  padding: 50px 70px;
+  padding: 20px 40px;
   background: rgb(249, 249, 249);
 }
 
+#headers {
+  display: flex;
+  flex-direction: row;
+}
+
 #currency {
-  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 7px;
+}
+
+p {
+  font-size: 13px;
+  margin: 5px;
+  padding-left: 4px;
+  color: rgb(14, 121, 209);
+}
+
+p.value {
+  margin-left: 77px;
 }
 
 label {
-  padding: 13px;
 }
 
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
   padding: 5px;
+  width: 130px;
   background: rgb(249, 249, 249);
 }
 

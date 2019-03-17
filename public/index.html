@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Currency Converter</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Convergence|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
   <h1>Currency Converter</h1>
 
   <div id="app">
-
+    <div id="headers">
+      <p><strong>Currency</strong></p>
+      <p class="value"><strong>Value</strong></p>
+    </div>
     <div id="currency">
-    <label for="select_from_currency">From:</label>
+    <label for="select_from_currency"></label>
     <select
       v-on:change="calculateConversion"
       id="select_from_currency"
@@ -29,7 +32,7 @@
     </div>
 
     <div id="currency">
-    <label for="select_to_currency">To:</label>
+    <label for="select_to_currency"></label>
     <select v-on:change="calculateConversion" id="select_to_currency" v-model="toSelectedCurrency">
       <option disabled value="">Select a currency</option>
       <option v-for="(value, key) of rates" :value="key">{{ key }}</option>
